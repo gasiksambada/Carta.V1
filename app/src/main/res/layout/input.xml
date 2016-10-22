@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    android:layout_gravity="center_horizontal" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingTop="20dp">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageView"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/splash_screen" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Carta Prediksi Resiko PTM"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="NAMA LENGKAP"
+            android:id="@+id/label_nama"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/dim_foreground_disabled_material_dark"
+            android:paddingTop="20dp"
+            android:textSize="16dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nama"
+            android:layout_gravity="center_horizontal"
+            android:hint="Omadi Jaya"
+            android:paddingBottom="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="TANGGAL LAHIR"
+            android:id="@+id/label_tanggallahir"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/dim_foreground_disabled_material_dark"
+            android:paddingTop="20dp"
+            android:textSize="16dp"
+            android:textIsSelectable="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tanggallahir"
+            android:layout_gravity="center_horizontal"
+            android:hint="May 15, 1984"
+            android:paddingBottom="20dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:weightSum="5"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="JENIS KELAMIN"
+                android:id="@+id/label_kelamin"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/dim_foreground_disabled_material_dark"
+                android:layout_weight="3"
+                android:textSize="16dp"
+                android:textIsSelectable="true" />
+
+            <RadioGroup
+                android:id="@+id/kelamin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/kelaminlaki"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Laki-laki"
+                    android:checked="true"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/kelaminperempuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Perempuan"
+                    android:layout_weight="1"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:weightSum="5"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="MEROKOK"
+                android:id="@+id/label_merokok"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/dim_foreground_disabled_material_dark"
+                android:layout_weight="3"
+                android:textSize="16dp"
+                android:textIsSelectable="true" />
+
+            <RadioGroup
+                android:id="@+id/merokok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/merokokya"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ya"
+                    android:checked="true"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/merokoktidak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tidak"
+                    android:layout_weight="1"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:weightSum="5"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="DIABETES"
+                android:id="@+id/label_diabetes"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/dim_foreground_disabled_material_dark"
+                android:layout_weight="3"
+                android:textSize="16dp"
+                android:textIsSelectable="true" />
+
+            <RadioGroup
+                android:id="@+id/diabetes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/diabetesya"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ya"
+                    android:checked="true"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/diabetestidak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tidak"
+                    android:layout_weight="1"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="KOLESTEROL"
+            android:id="@+id/label_kolesterol"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/dim_foreground_disabled_material_dark"
+            android:paddingTop="20dp"
+            android:textSize="16dp"
+            android:textIsSelectable="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/kolesterol"
+            android:layout_gravity="center_horizontal"
+            android:hint="153.10"
+            android:paddingBottom="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="TEKANAN DARAH"
+            android:id="@+id/label_tekanandarah"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/dim_foreground_disabled_material_dark"
+            android:paddingTop="20dp"
+            android:textSize="16dp"
+            android:textIsSelectable="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tekanandarah"
+            android:layout_gravity="center_horizontal"
+            android:hint="120"
+            android:paddingBottom="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/kirim"
+            android:id="@+id/kirim"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button_green"
+            android:textColor="#ffffff"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>
