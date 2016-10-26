@@ -56,8 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="TANGGAL LAHIR"
-            android:id="@+id/label_tanggallahir"
+            android:text="USIA"
+            android:id="@+id/label_usia"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/dim_foreground_disabled_material_dark"
             android:paddingTop="20dp"
@@ -67,9 +67,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tanggallahir"
+            android:id="@+id/usia"
             android:layout_gravity="center_horizontal"
-            android:hint="May 15, 1984"
+            android:hint="26"
             android:paddingBottom="20dp" />
 
         <LinearLayout
