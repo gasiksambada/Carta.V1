@@ -21,12 +21,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Carta Prediksi Resiko PTM"
+        android:text="Carta Prediksi Risiko PTM"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textSize="24dp"
-        android:textIsSelectable="false" />
+        android:textIsSelectable="false"
+        android:textColor="#211f22" />
 
 </LinearLayout>

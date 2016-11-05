@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:paddingTop="20dp">
@@ -27,11 +27,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Carta Prediksi Resiko PTM"
+            android:text="Carta Prediksi Risiko PTM"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:textColor="#211f22" />
 
         <TextView
             android:layout_width="match_parent"
@@ -40,16 +41,15 @@
             android:text="NAMA LENGKAP"
             android:id="@+id/label_nama"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/dim_foreground_disabled_material_dark"
+            android:textColor="#c0c0c0"
             android:paddingTop="20dp"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nama"
             android:layout_gravity="center_horizontal"
-            android:hint="Omadi Jaya"
             android:paddingBottom="20dp" />
 
         <TextView
@@ -59,17 +59,18 @@
             android:text="USIA"
             android:id="@+id/label_usia"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/dim_foreground_disabled_material_dark"
+            android:textColor="#c0c0c0"
             android:paddingTop="20dp"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textIsSelectable="true" />
 
-        <EditText
+        <Spinner
+            android:id="@+id/usia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/usia"
+            android:entries="@array/pilihan_umur"
+            android:prompt="@string/pilih_umur"
             android:layout_gravity="center_horizontal"
-            android:hint="26"
             android:paddingBottom="20dp" />
 
         <LinearLayout
@@ -78,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingTop="20dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:paddingBottom="20dp">
 
             <TextView
@@ -88,9 +89,9 @@
                 android:text="JENIS KELAMIN"
                 android:id="@+id/label_kelamin"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@color/dim_foreground_disabled_material_dark"
-                android:layout_weight="3"
-                android:textSize="16dp"
+                android:textColor="#c0c0c0"
+                android:layout_weight="4"
+                android:textSize="14dp"
                 android:textIsSelectable="true" />
 
             <RadioGroup
@@ -98,6 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:weightSum="4"
                 android:orientation="horizontal" >
 
                 <RadioButton
@@ -106,14 +108,14 @@
                     android:layout_height="wrap_content"
                     android:text="Laki-laki"
                     android:checked="true"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
 
                 <RadioButton
                     android:id="@+id/kelaminperempuan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Perempuan"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
 
             </RadioGroup>
 
@@ -125,7 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingTop="20dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:paddingBottom="20dp">
 
             <TextView
@@ -135,9 +137,9 @@
                 android:text="MEROKOK"
                 android:id="@+id/label_merokok"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@color/dim_foreground_disabled_material_dark"
-                android:layout_weight="3"
-                android:textSize="16dp"
+                android:textColor="#c0c0c0"
+                android:layout_weight="4"
+                android:textSize="14dp"
                 android:textIsSelectable="true" />
 
             <RadioGroup
@@ -145,6 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:weightSum="4"
                 android:orientation="horizontal" >
 
                 <RadioButton
@@ -153,14 +156,14 @@
                     android:layout_height="wrap_content"
                     android:text="Ya"
                     android:checked="true"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
 
                 <RadioButton
                     android:id="@+id/merokoktidak"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tidak"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
 
             </RadioGroup>
 
@@ -172,7 +175,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingTop="20dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:paddingBottom="20dp">
 
             <TextView
@@ -182,9 +185,9 @@
                 android:text="DIABETES"
                 android:id="@+id/label_diabetes"
                 android:layout_gravity="center_horizontal"
-                android:textColor="@color/dim_foreground_disabled_material_dark"
-                android:layout_weight="3"
-                android:textSize="16dp"
+                android:textColor="#c0c0c0"
+                android:layout_weight="4"
+                android:textSize="14dp"
                 android:textIsSelectable="true" />
 
             <RadioGroup
@@ -192,6 +195,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:weightSum="4"
                 android:orientation="horizontal" >
 
                 <RadioButton
@@ -200,14 +204,14 @@
                     android:layout_height="wrap_content"
                     android:text="Ya"
                     android:checked="true"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
 
                 <RadioButton
                     android:id="@+id/diabetestidak"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tidak"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
 
             </RadioGroup>
 
@@ -220,37 +224,39 @@
             android:text="KOLESTEROL"
             android:id="@+id/label_kolesterol"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/dim_foreground_disabled_material_dark"
+            android:textColor="#c0c0c0"
             android:paddingTop="20dp"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textIsSelectable="true" />
 
-        <EditText
+        <Spinner
+            android:id="@+id/kolesterol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/kolesterol"
+            android:entries="@array/pilihan_nilai_kolestrol"
+            android:prompt="@string/pilih_nilai_kolestrol"
             android:layout_gravity="center_horizontal"
-            android:hint="153.10"
             android:paddingBottom="20dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="TEKANAN DARAH"
+            android:text="TEKANAN DARAH (SISTOLE)"
             android:id="@+id/label_tekanandarah"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/dim_foreground_disabled_material_dark"
+            android:textColor="#c0c0c0"
             android:paddingTop="20dp"
-            android:textSize="16dp"
+            android:textSize="14dp"
             android:textIsSelectable="true" />
 
-        <EditText
+        <Spinner
+            android:id="@+id/tekanandarah"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tekanandarah"
+            android:entries="@array/pilihan_tekanan_darah"
+            android:prompt="@string/pilih_tekanan_darah"
             android:layout_gravity="center_horizontal"
-            android:hint="120"
             android:paddingBottom="20dp" />
 
         <Button

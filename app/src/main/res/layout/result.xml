@@ -15,8 +15,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Omadi Jaya"
-            android:id="@+id/name"
+            android:text="Guest"
+            android:id="@+id/nama"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:textSize="36dp"
@@ -28,7 +28,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="TINGKAT RISIKO ANDA :"
             android:id="@+id/textView2"
-            android:layout_below="@+id/name"
+            android:layout_below="@+id/nama"
             android:layout_centerHorizontal="true"
             android:textSize="20dp"
             android:layout_marginTop="10dp" />
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="&lt; 10%"
-            android:id="@+id/textView3"
+            android:id="@+id/tingkat_resiko"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
             android:textColor="#ffffff"
@@ -48,7 +48,7 @@
             android:paddingBottom="10dp"
             android:textSize="36dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/radius_corner"/>
+            android:background="@drawable/resiko_1"/>
 
     </RelativeLayout>
 
@@ -57,60 +57,24 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
         android:layout_weight="1"
-        android:background="#42f4c2">
+        android:background="#51d1c4"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Anda memiliki tingkat risiko penyakit"
-            android:id="@+id/textView4"
+            android:text="Anda memiliki tingkat risiko penyakit kardiovaskular yang sangat rendah. Pertahankan prestasi anda dan terus jaga pola hidup sehat untuk masa depan yang baik"
+            android:id="@+id/deskripsi"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:textSize="16dp"
-            android:textColor="#ffffff" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="kardiovaskular yang rendah"
-            android:id="@+id/textView5"
-            android:layout_below="@+id/textView4"
-            android:layout_centerHorizontal="true"
-            android:textSize="16dp"
             android:textColor="#ffffff"
-            android:layout_marginBottom="30dp"/>
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:textAlignment="center" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Pertahankan prestasi anda dan terus jaga"
-            android:id="@+id/textView6"
-            android:layout_below="@+id/textView5"
-            android:layout_centerHorizontal="true"
-            android:textSize="16dp"
-            android:textColor="#ffffff" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="pola hidup sehat untuk masa depan anda yang"
-            android:id="@+id/textView7"
-            android:layout_below="@+id/textView6"
-            android:layout_centerHorizontal="true"
-            android:textSize="16dp"
-            android:textColor="#ffffff" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="baik"
-            android:id="@+id/textView8"
-            android:layout_below="@+id/textView7"
-            android:layout_centerHorizontal="true"
-            android:textSize="16dp"
-            android:textColor="#ffffff" />
     </RelativeLayout>
 </LinearLayout>

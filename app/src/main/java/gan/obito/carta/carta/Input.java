@@ -14,11 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.RequestBody;
 
-import gan.obito.carta.carta.model.Hasil;
 import gan.obito.carta.carta.model.Pemeriksaan;
 import gan.obito.carta.carta.service.APIService;
 import retrofit.Call;
@@ -33,11 +33,12 @@ import retrofit.Retrofit;
 public class Input extends Activity implements View.OnClickListener {
     private Button bKirim;
     private ProgressDialog pDialog;
-    private EditText EditNama,EditUsia,EditKolestrol,EditTekananDarah;
+    private EditText EditNama;
     private Integer SelectedKelamin,SelectedMerokok,SelectedDiabetes,ResultResikoID;
     private RadioGroup GroupKelamin,GroupMerokok,GroupDiabetes;
     private RadioButton EditKelamin,EditMerokok,EditDiabetes;
-    private String ValueKelamin,ValueMerokok,ValueDiabetes,ResultNama,ResultKodeWarna,ResultTingkatResiko,ResultDeskripsi;
+    private String ValueKelamin,ValueMerokok,ValueDiabetes,ValueKolestrol,ResultNama,ResultKodeWarna,ResultTingkatResiko,ResultDeskripsi;
+    private Spinner EditUsia,EditKolestrol,EditTekananDarah;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,12 +47,10 @@ public class Input extends Activity implements View.OnClickListener {
 
         setContentView(R.layout.input);
 
-
-
         EditNama = (EditText) findViewById(R.id.nama);
-        EditUsia = (EditText) findViewById(R.id.usia);
-        EditKolestrol = (EditText) findViewById(R.id.kolesterol);
-        EditTekananDarah = (EditText) findViewById(R.id.tekanandarah);
+        EditUsia = (Spinner) findViewById(R.id.usia);
+        EditKolestrol = (Spinner) findViewById(R.id.kolesterol);
+        EditTekananDarah = (Spinner) findViewById(R.id.tekanandarah);
 
         GroupKelamin =  (RadioGroup) findViewById(R.id.kelamin);
         GroupMerokok =  (RadioGroup) findViewById(R.id.merokok);
@@ -138,27 +137,43 @@ public class Input extends Activity implements View.OnClickListener {
             hidepDialog();
             return false;
         }
-        if(EditUsia.getText().toString().equals("")){
-            alertBox("Tolong isi usia anda");
+        if(EditUsia.getSelectedItem().toString().equals("")){
+            alertBox("Tolong pilih usia anda");
             hidepDialog();
             return false;
         }
-        if(EditKolestrol.getText().toString().equals("")){
-            alertBox("Tolong isi tingkat kolestrol anda");
+        if(EditKolestrol.getSelectedItem().toString().equals("")){
+            alertBox("Tolong pilih tingkat kolestrol anda");
             hidepDialog();
             return false;
+        }else{
+            if(EditKolestrol.getSelectedItem().toString().equals("4 - 154.44")){
+                ValueKolestrol = "154.44";
+            }
+            if(EditKolestrol.getSelectedItem().toString().equals("5 - 193.05")){
+                ValueKolestrol = "193.05";
+            }
+            if(EditKolestrol.getSelectedItem().toString().equals("6 - 231.66")){
+                ValueKolestrol = "231.66";
+            }
+            if(EditKolestrol.getSelectedItem().toString().equals("7 - 270.27")){
+                ValueKolestrol = "270.27";
+            }
+            if(EditKolestrol.getSelectedItem().toString().equals("8 - 308.88")){
+                ValueKolestrol = "308.88";
+            }
         }
-        if(EditTekananDarah.getText().toString().equals("")){
-            alertBox("Tolong isi tingkat tekanan darah anda");
+        if(EditTekananDarah.getSelectedItem().toString().equals("")){
+            alertBox("Tolong pilih tingkat tekanan darah anda");
             hidepDialog();
             return false;
         }
 
         Pemeriksaan Carta = new Pemeriksaan();
         Carta.setNama(EditNama.getText().toString());
-        Carta.setUsia(Integer.parseInt(EditUsia.getText().toString()));
-        Carta.setKolesterol(Float.parseFloat(EditKolestrol.getText().toString()));
-        Carta.setTekanan_darah(Integer.parseInt(EditTekananDarah.getText().toString()));
+        Carta.setUsia(Integer.parseInt(EditUsia.getSelectedItem().toString()));
+        Carta.setKolesterol(Float.parseFloat(ValueKolestrol));
+        Carta.setTekanan_darah(Integer.parseInt(EditTekananDarah.getSelectedItem().toString()));
         Carta.setGender(ValueKelamin);
         Carta.setDiabetes(ValueDiabetes);
         Carta.setMerokok(ValueMerokok);
