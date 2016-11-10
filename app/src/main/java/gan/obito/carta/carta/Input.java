@@ -37,7 +37,7 @@ public class Input extends Activity implements View.OnClickListener {
     private Integer SelectedKelamin,SelectedMerokok,SelectedDiabetes,ResultResikoID;
     private RadioGroup GroupKelamin,GroupMerokok,GroupDiabetes;
     private RadioButton EditKelamin,EditMerokok,EditDiabetes;
-    private String ValueKelamin,ValueMerokok,ValueDiabetes,ValueKolestrol,ResultNama,ResultKodeWarna,ResultTingkatResiko,ResultDeskripsi;
+    private String ValueKelamin,ValueMerokok,ValueDiabetes,ValueKolestrol,ValueUsia,ValueTekananDarah,ResultNama,ResultKodeWarna,ResultTingkatResiko,ResultDeskripsi,ResultSaranSingkat,ResultSaranLanjutan;
     private Spinner EditUsia,EditKolestrol,EditTekananDarah;
 
     @Override
@@ -141,25 +141,38 @@ public class Input extends Activity implements View.OnClickListener {
             alertBox("Tolong pilih usia anda");
             hidepDialog();
             return false;
+        }else{
+            if(EditUsia.getSelectedItem().toString().equals("40 - 49")){
+                ValueUsia = "40";
+            }
+            if(EditUsia.getSelectedItem().toString().equals("50 - 59")){
+                ValueUsia = "50";
+            }
+            if(EditUsia.getSelectedItem().toString().equals("60 - 69")){
+                ValueUsia = "60";
+            }
+            if(EditUsia.getSelectedItem().toString().equals("70 - 79")){
+                ValueUsia = "70";
+            }
         }
         if(EditKolestrol.getSelectedItem().toString().equals("")){
             alertBox("Tolong pilih tingkat kolestrol anda");
             hidepDialog();
             return false;
         }else{
-            if(EditKolestrol.getSelectedItem().toString().equals("4 - 154.44")){
+            if(EditKolestrol.getSelectedItem().toString().equals("40 - 154.44")){
                 ValueKolestrol = "154.44";
             }
-            if(EditKolestrol.getSelectedItem().toString().equals("5 - 193.05")){
+            if(EditKolestrol.getSelectedItem().toString().equals("154.45 - 193.05")){
                 ValueKolestrol = "193.05";
             }
-            if(EditKolestrol.getSelectedItem().toString().equals("6 - 231.66")){
+            if(EditKolestrol.getSelectedItem().toString().equals("193.06 - 231.66")){
                 ValueKolestrol = "231.66";
             }
-            if(EditKolestrol.getSelectedItem().toString().equals("7 - 270.27")){
+            if(EditKolestrol.getSelectedItem().toString().equals("270.28 - 270.27")){
                 ValueKolestrol = "270.27";
             }
-            if(EditKolestrol.getSelectedItem().toString().equals("8 - 308.88")){
+            if(EditKolestrol.getSelectedItem().toString().equals("308.89 - 308.88")){
                 ValueKolestrol = "308.88";
             }
         }
@@ -167,13 +180,26 @@ public class Input extends Activity implements View.OnClickListener {
             alertBox("Tolong pilih tingkat tekanan darah anda");
             hidepDialog();
             return false;
+        }else{
+            if(EditTekananDarah.getSelectedItem().toString().equals("40 - 120")){
+                ValueTekananDarah = "120";
+            }
+            if(EditTekananDarah.getSelectedItem().toString().equals("121 - 140")){
+                ValueTekananDarah = "140";
+            }
+            if(EditTekananDarah.getSelectedItem().toString().equals("141 - 160")){
+                ValueTekananDarah = "160";
+            }
+            if(EditTekananDarah.getSelectedItem().toString().equals("161 - 180")){
+                ValueTekananDarah = "180";
+            }
         }
 
         Pemeriksaan Carta = new Pemeriksaan();
         Carta.setNama(EditNama.getText().toString());
-        Carta.setUsia(Integer.parseInt(EditUsia.getSelectedItem().toString()));
+        Carta.setUsia(Integer.parseInt(ValueUsia));
         Carta.setKolesterol(Float.parseFloat(ValueKolestrol));
-        Carta.setTekanan_darah(Integer.parseInt(EditTekananDarah.getSelectedItem().toString()));
+        Carta.setTekanan_darah(Integer.parseInt(ValueTekananDarah));
         Carta.setGender(ValueKelamin);
         Carta.setDiabetes(ValueDiabetes);
         Carta.setMerokok(ValueMerokok);
@@ -204,6 +230,8 @@ public class Input extends Activity implements View.OnClickListener {
                     ResultKodeWarna = pemeriksaan.getResult().getKode_warna();
                     ResultResikoID = pemeriksaan.getResult().getRisiko_id();
                     ResultDeskripsi = pemeriksaan.getResult().getDeskripsi();
+                    ResultSaranSingkat = pemeriksaan.getResult().getShort_suggestion();
+                    ResultSaranLanjutan = pemeriksaan.getResult().getDetail_suggestion();
 
                     Intent intent_result = new Intent(Input.this, Result.class);
                     Bundle bQuestion = new Bundle();
@@ -212,6 +240,8 @@ public class Input extends Activity implements View.OnClickListener {
                     bQuestion.putString("kode_warna", ResultKodeWarna);
                     bQuestion.putString("tingkat_risiko", ResultTingkatResiko);
                     bQuestion.putString("deskripsi", ResultDeskripsi);
+                    bQuestion.putString("saran_singkat", ResultSaranSingkat);
+                    bQuestion.putString("saran_lanjutan", ResultSaranLanjutan);
                     intent_result.putExtras(bQuestion);
                     startActivity(intent_result);
                 }

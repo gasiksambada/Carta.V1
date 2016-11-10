@@ -4,8 +4,24 @@ package gan.obito.carta.carta.model;
  * Created by Gasik Sambada on 10/26/2016.
  */
 public class Hasil {
-    private String nama,usia,gender,merokok,diabetes,kode_warna,tingkat_risiko,deskripsi,kolestrol,tekanan_darah;
+    private String nama,usia,gender,merokok,diabetes,kode_warna,tingkat_risiko,deskripsi,short_suggestion,detail_suggestion,kolestrol,tekanan_darah;
     private Integer  risiko_id;
+
+    public String getShort_suggestion() {
+        return short_suggestion;
+    }
+
+    public void setShort_suggestion(String short_suggestion) {
+        this.short_suggestion = short_suggestion;
+    }
+
+    public String getDetail_suggestion() {
+        return detail_suggestion;
+    }
+
+    public void setDetail_suggestion(String detail_suggestion) {
+        this.detail_suggestion = detail_suggestion;
+    }
 
     public String getNama() {
         return nama;

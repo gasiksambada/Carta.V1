@@ -5,24 +5,24 @@
     <string name="kelamin">Kelamin :</string>
     <string name="pilih_umur">Pilih Umur</string>
     <string-array name="pilihan_umur">
-        <item>40</item>
-        <item>50</item>
-        <item>60</item>
-        <item>70</item>
+        <item>40 - 49</item>
+        <item>50 - 59</item>
+        <item>60 - 69</item>
+        <item>70 - 79</item>
     </string-array>
     <string name="pilih_tekanan_darah">Pilih Tekanan Darah</string>
     <string-array name="pilihan_tekanan_darah">
-        <item>120</item>
-        <item>140</item>
-        <item>160</item>
-        <item>180</item>
+        <item>40 - 120</item>
+        <item>121 - 140</item>
+        <item>141 - 160</item>
+        <item>161 - 180</item>
     </string-array>
     <string name="pilih_nilai_kolestrol">Pilih Nilai Kolestrol</string>
     <string-array name="pilihan_nilai_kolestrol">
-        <item>4 - 154.44</item>
-        <item>5 - 193.05</item>
-        <item>6 - 231.66</item>
-        <item>7 - 270.27</item>
-        <item>8 - 308.88</item>
+        <item>40 - 154.44</item>
+        <item>154.45 - 193.05</item>
+        <item>193.06 - 231.66</item>
+        <item>270.28 - 270.27</item>
+        <item>308.89 - 308.88</item>
     </string-array>
 </resources>
