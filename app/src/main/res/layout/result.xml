@@ -125,10 +125,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Lihat lanjutan saran"
+            android:text="LIHAT SARAN LANJUTAN"
             android:id="@+id/lihat_lanjutan_saran"
             android:textSize="16dp"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="#2e847b"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:textAlignment="center"
@@ -137,7 +137,8 @@
             android:layout_below="@+id/saran_singkat"
             android:textStyle="bold"
             android:layout_alignParentLeft="false"
-            android:layout_alignParentStart="false" />
+            android:layout_alignParentStart="false"
+            />
 
     </RelativeLayout>
 </LinearLayout>

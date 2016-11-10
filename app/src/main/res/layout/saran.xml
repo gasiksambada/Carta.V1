@@ -6,21 +6,42 @@
     android:gravity="center_vertical|center_horizontal"
     android:id="@+id/scrollView2"
      >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Anda memiliki tingkat risiko penyakit kardiovaskular yang sangat rendah."
-        android:id="@+id/saran_lanjutan"
-        android:textSize="16dp"
-        android:textColor="#000000"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp"
+            android:text="Tingkat Resiko"
+            android:id="@+id/judul"
+            android:layout_alignParentTop="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Anda memiliki tingkat risiko penyakit kardiovaskular yang sangat rendah."
+            android:id="@+id/saran_lanjutan"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/judul"
+            />
+
+    </RelativeLayout>
+
 
 </ScrollView>
