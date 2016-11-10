@@ -5,26 +5,38 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
  * Created by Gasik Sambada on 10/21/2016.
  */
-public class Result extends Activity implements View.OnClickListener {
+public class Result extends AppCompatActivity implements View.OnClickListener {
     private String ResultNama,ResultKodeWarna,ResultTingkatResiko,ResultDeskripsi,ResultSaranSingkat,ResultSaranLanjutan;
     private Integer ResultResikoID;
     private TextView nama,tingkat_resiko,deskripsi,saran_singkat,lihat_lanjutan_saran;
+    private ImageView bButton;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.actionbar);
 
         setContentView(R.layout.result);
+
+        bButton = (ImageView) findViewById(R.id.back_button);
+        bButton.setVisibility(View.VISIBLE);
+        bButton.setOnClickListener(this);
 
         Bundle bResult = getIntent().getExtras();
         if (bResult != null) {
@@ -41,6 +53,9 @@ public class Result extends Activity implements View.OnClickListener {
             deskripsi = (TextView) findViewById(R.id.deskripsi);
             saran_singkat = (TextView) findViewById(R.id.saran_singkat);
             lihat_lanjutan_saran = (TextView) findViewById(R.id.lihat_lanjutan_saran);
+            SpannableString content = new SpannableString("LIHAT SARAN LANJUTAN");
+            content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+            lihat_lanjutan_saran.setText(content);
             lihat_lanjutan_saran.setOnClickListener(this);
 
             nama.setText(ResultNama);
@@ -78,8 +93,13 @@ public class Result extends Activity implements View.OnClickListener {
                 Intent intent_saran = new Intent(Result.this, Saran.class);
                 Bundle bQuestion = new Bundle();
                 bQuestion.putString("saran_lanjutan", ResultSaranLanjutan);
+                bQuestion.putString("tingkat_risiko", ResultTingkatResiko);
                 intent_saran.putExtras(bQuestion);
                 startActivity(intent_saran);
+                break;
+
+            case R.id.back_button:
+                finish();
                 break;
         }
     }
